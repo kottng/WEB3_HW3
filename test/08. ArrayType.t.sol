@@ -19,5 +19,13 @@ contract ArrayTypeTest is Test {
 }
 
 contract ArrayTypeOptimizedTest is Test {
-/* YOUR SOLUTION GOES HERE */
+    ArrayTypeOptimized arrayTypeOptimized;
+
+    function setUp() public {
+        arrayTypeOptimized = new ArrayTypeOptimized();
+    }
+
+    function test_init() public {
+        arrayTypeOptimized.initArray();
+    }
 }
