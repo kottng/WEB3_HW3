@@ -347,3 +347,67 @@ Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 3.05ms (1.61ms CPU 
 Ran 2 test suites in 4.28ms (6.10ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
 ```
 
+## MultiSigWallet
+
+```
+Compiling 2 files with Solc 0.8.28
+Solc 0.8.28 finished in 2.40s
+Compiler run successful!
+
+Ran 8 tests for test/10. MultiSigWallet.t.sol:MultiSigWalletOptimizedTest
+[PASS] testConfirmTransaction() (gas: 201650)
+[PASS] testExecuteTransaction() (gas: 305759)
+[PASS] testExecutionFailure() (gas: 266439)
+[PASS] testInitialization() (gas: 31880)
+[PASS] testOnlyOwnerCanConfirm() (gas: 131442)
+[PASS] testOnlyOwnerCanExecute() (gas: 328669)
+[PASS] testOnlyOwnerCanSubmit() (gas: 32542)
+[PASS] testSubmitTransaction() (gas: 111523)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 12.64ms (16.51ms CPU time)
+
+Ran 8 tests for test/10. MultiSigWallet.t.sol:MultiSigWalletTest
+[PASS] testConfirmTransaction() (gas: 207449)
+[PASS] testExecuteTransaction() (gas: 320802)
+[PASS] testExecutionFailure() (gas: 281482)
+[PASS] testInitialization() (gas: 31858)
+[PASS] testOnlyOwnerCanConfirm() (gas: 145679)
+[PASS] testOnlyOwnerCanExecute() (gas: 350849)
+[PASS] testOnlyOwnerCanSubmit() (gas: 39992)
+[PASS] testSubmitTransaction() (gas: 119564)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 13.53ms (19.25ms CPU time)
+| src/10. MultiSigWallet.sol:MultiSigWallet contract |                 |       |        |        |         |
+|----------------------------------------------------|-----------------|-------|--------|--------|---------|
+| Deployment Cost                                    | Deployment Size |       |        |        |         |
+| 870739                                             | 4127            |       |        |        |         |
+| Function Name                                      | min             | avg   | median | max    | # calls |
+| confirmTransaction                                 | 31229           | 86606 | 76994  | 124376 | 8       |
+| executeTransaction                                 | 31273           | 31273 | 31273  | 31273  | 1       |
+| getConfirmations                                   | 12011           | 12011 | 12011  | 12011  | 1       |
+| getTransactionCount                                | 325             | 325   | 325    | 325    | 1       |
+| owners                                             | 2600            | 3266  | 2600   | 4600   | 3       |
+| receive                                            | 0               | 0     | 0      | 0      | 8       |
+| required                                           | 2360            | 2360  | 2360   | 2360   | 1       |
+| submitTransaction                                  | 31461           | 92741 | 102943 | 103015 | 7       |
+| transactions                                       | 1296            | 1296  | 1296   | 1296   | 4       |
+
+
+| src/10. MultiSigWallet.sol:MultiSigWalletOptimized contract |                 |       |        |        |         |
+|-------------------------------------------------------------|-----------------|-------|--------|--------|---------|
+| Deployment Cost                                             | Deployment Size |       |        |        |         |
+| 924219                                                      | 4129            |       |        |        |         |
+| Function Name                                               | min             | avg   | median | max    | # calls |
+| confirmTransaction                                          | 23801           | 82410 | 74679  | 118748 | 8       |
+| executeTransaction                                          | 23845           | 23845 | 23845  | 23845  | 1       |
+| getConfirmations                                            | 15627           | 15627 | 15627  | 15627  | 1       |
+| getTransactionCount                                         | 325             | 325   | 325    | 325    | 1       |
+| owners                                                      | 2600            | 3266  | 2600   | 4600   | 3       |
+| receive                                                     | 0               | 0     | 0      | 0      | 8       |
+| required                                                    | 2382            | 2382  | 2382   | 2382   | 1       |
+| submitTransaction                                           | 24011           | 85841 | 96134  | 96206  | 7       |
+| transactions                                                | 1061            | 1061  | 1061   | 1061   | 4       |
+
+
+
+
+Ran 2 test suites in 15.76ms (26.17ms CPU time): 16 tests passed, 0 failed, 0 skipped (16 total tests)
+```
